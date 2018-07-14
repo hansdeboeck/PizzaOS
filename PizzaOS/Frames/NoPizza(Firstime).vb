@@ -18,27 +18,25 @@ Public Class NoPizza_Firstime
         Return s
     End Function
 
-    Function ExtractBody(ByVal page As String) As String
-        Return page
-    End Function
-
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Dim page As String = GetPage("https://pizzaos.hacemedia.com/api/check.php?naam=" & TextBox1.Text)
-        Dim body As String = ExtractBody(page)
         If page = TextBox1.Text Then
             If System.IO.File.Exists("C:\PizzaOS\DONTDELETEME") Then
 
                 Label2.Text = "Pizza's worden gedownload"
                 My.Computer.FileSystem.DeleteFile("C:\PizzaOS\DONTDELETEME")
                 My.Computer.Network.DownloadFile("https://pizzaos.hacemedia.com/api/create.php", "C:\PizzaOS\DONTDELETEME")
+                My.Computer.Network.DownloadFile("https://pizzaos.hacemedia.com/api/create.php", "C:\PizzaOS\config\user.txt")
                 MsgBox("Restart Requirerd")
                 Getstarted.Close()
             Else
                 Label2.Text = "Pizza's worden gedownload"
                 My.Computer.Network.DownloadFile("https://pizzaos.hacemedia.com/api/create.php", "C:\PizzaOS\DONTDELETEME")
+                My.Computer.Network.DownloadFile("https://pizzaos.hacemedia.com/api/create.php", "C:\PizzaOS\config\user.txt")
                 MsgBox("Restart Requirerd")
                 Getstarted.Close()
             End If
+
         Else
             If pogingen = 1 Then
                 MsgBox("Laatse waarschuwing! Je hebt nog maar 1 poging neem contact op met je account manager", MsgBoxStyle.Critical)
