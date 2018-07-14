@@ -25,14 +25,14 @@ Public Class NoPizza_Firstime
 
                 Label2.Text = "Pizza's worden gedownload"
                 My.Computer.FileSystem.DeleteFile("C:\PizzaOS\DONTDELETEME")
-                My.Computer.Network.DownloadFile("https://pizzaos.hacemedia.com/api/create.php", "C:\PizzaOS\DONTDELETEME")
-                My.Computer.Network.DownloadFile("https://pizzaos.hacemedia.com/api/create.php", "C:\PizzaOS\config\user.txt")
+                My.Computer.Network.DownloadFile("https://pizzaos.hacemedia.com/api/create.php?naam=" & TextBox1.Text, "C: \PizzaOS\DONTDELETEME")
+                My.Computer.Network.DownloadFile("https://pizzaos.hacemedia.com/api/create.php?naam=" & TextBox1.Text, "C:\PizzaOS\config\user.txt")
                 MsgBox("Restart Requirerd")
                 Getstarted.Close()
             Else
                 Label2.Text = "Pizza's worden gedownload"
-                My.Computer.Network.DownloadFile("https://pizzaos.hacemedia.com/api/create.php", "C:\PizzaOS\DONTDELETEME")
-                My.Computer.Network.DownloadFile("https://pizzaos.hacemedia.com/api/create.php", "C:\PizzaOS\config\user.txt")
+                My.Computer.Network.DownloadFile("https://pizzaos.hacemedia.com/api/create.php?naam=" & TextBox1.Text, "C:\PizzaOS\DONTDELETEME")
+                My.Computer.Network.DownloadFile("https://pizzaos.hacemedia.com/api/create.php?naam=" & TextBox1.Text, "C:\PizzaOS\config\user.txt")
                 MsgBox("Restart Requirerd")
                 Getstarted.Close()
             End If

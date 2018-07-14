@@ -89,6 +89,7 @@
     </Compile>
     <Compile Include="Functies\checkupdate.vb" />
     <Compile Include="Functies\downloadpizzas.vb" />
+    <Compile Include="Functies\google-chrome.vb" />
     <Compile Include="Getstarted.vb">
       <SubType>Form</SubType>
     </Compile>

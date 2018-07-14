@@ -1,6 +1,5 @@
 ﻿Imports System.Net
 Imports System.IO
-Imports System.Diagnostics
 
 Public Class checkupdate
 

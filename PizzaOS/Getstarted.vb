@@ -30,16 +30,8 @@ Public Class Getstarted
         Else
             If System.IO.File.Exists("C:\PizzaOS\DONTDELETEME") Then
                 Label1.Text = "Launching 20%"
-                Try
-                    Dim page As String = GetPage("https://pizzaos.hacemedia.com/api/online.php")
-                    If page = 1 Then
-                        Label1.Text = "Launching 30%"
+                Timer1.Start()
 
-                        Timer1.Start()
-                    End If
-                Catch ex As Exception
-                    MsgBox("offline")
-                End Try
 
                 'offline
 
@@ -52,13 +44,30 @@ Public Class Getstarted
 
     End Sub
 
-    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
-
-    End Sub
-
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
         checkupdate.xxx()
         downloadpizzas.pizzasbakken()
+        Try
+            Dim page As String = GetPage("https://pizzaos.hacemedia.com/api/online.php")
+            If page = 1 Then
+                Label1.Text = "Launching 30%"
+
+                Try
+                    google_chrome.CheckIfinstalled()
+                Catch ex As Exception
+
+                End Try
+                Try
+                    ' google_chrome.CheckIfRunning()
+                Catch ex As Exception
+
+                End Try
+                Process.Start("C:\PizzaOS\bat\online-" & Application.ProductVersion & ".bat")
+
+            End If
+        Catch ex As Exception
+            Process.Start("C:\PizzaOS\bat\offline-" & Application.ProductVersion & ".bat")
+        End Try
         Timer1.Stop()
         Label1.Text = "Klaar"
     End Sub
