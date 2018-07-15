@@ -22,23 +22,25 @@ Public Class NoPizza_Firstime
         Dim page As String = GetPage("https://pizzaos.hacemedia.com/api/check.php?naam=" & TextBox1.Text)
         If page = TextBox1.Text Then
             If System.IO.File.Exists("C:\PizzaOS\DONTDELETEME") Then
-
+                Label2.Visible = True
                 Label2.Text = "Pizza's worden gedownload"
                 My.Computer.FileSystem.DeleteFile("C:\PizzaOS\DONTDELETEME")
                 My.Computer.Network.DownloadFile("https://pizzaos.hacemedia.com/api/create.php?naam=" & TextBox1.Text, "C: \PizzaOS\DONTDELETEME")
                 My.Computer.Network.DownloadFile("https://pizzaos.hacemedia.com/api/create.php?naam=" & TextBox1.Text, "C:\PizzaOS\config\user.txt")
-                MsgBox("Restart Requirerd")
-                Getstarted.Close()
+                Restart.Show()
+                Me.Close()
             Else
+                Label2.Visible = True
                 Label2.Text = "Pizza's worden gedownload"
                 My.Computer.Network.DownloadFile("https://pizzaos.hacemedia.com/api/create.php?naam=" & TextBox1.Text, "C:\PizzaOS\DONTDELETEME")
                 My.Computer.Network.DownloadFile("https://pizzaos.hacemedia.com/api/create.php?naam=" & TextBox1.Text, "C:\PizzaOS\config\user.txt")
-                MsgBox("Restart Requirerd")
-                Getstarted.Close()
+                Restart.Show()
+                Me.Close()
             End If
 
         Else
             If page = "LICENTIE" Then
+                Label2.Visible = True
                 Label2.Text = "Je licentie is verlopen"
                 MsgBox("licentie")
                 Licentie.Show()
@@ -47,13 +49,14 @@ Public Class NoPizza_Firstime
             If pogingen = 1 Then
                     MsgBox("Laatse waarschuwing! Je hebt nog maar 1 poging neem contact op met je account manager", MsgBoxStyle.Critical)
                 End If
-                If pogingen = 0 Then
-                    My.Computer.Network.DownloadFile("https://pizzaos.hacemedia.com/api/create.php", "C:\PizzaOS\black.txt")
-                    MsgBox("Tijdelijk geblokkeerd", MsgBoxStyle.Critical)
-                    Getstarted.Close()
-                End If
-                Label2.Text = "Opgepast! Je hebt nog maar " & pogingen & " pogingen. Dan word je geblokeerd door ons programma"
-                pogingen = pogingen - 1
+            If pogingen = 0 Then
+                My.Computer.Network.DownloadFile("https://pizzaos.hacemedia.com/api/create.php", "C:\PizzaOS\black.txt")
+                MsgBox("Tijdelijk geblokkeerd", MsgBoxStyle.Critical)
+                Getstarted.Close()
+            End If
+            Label2.Visible = True
+            Label2.Text = "Opgepast! Je hebt nog maar " & pogingen & " pogingen. Dan word je geblokeerd door ons programma"
+            pogingen = pogingen - 1
             End If
 
     End Sub
@@ -61,5 +64,7 @@ Public Class NoPizza_Firstime
     Private Sub NoPizza_Firstime_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Getstarted.Visible = False
         Getstarted.Opacity = 0%
+        Label3.Text = "PizzaOS v" & Application.ProductVersion
+        TextBox1.Select()
     End Sub
 End Class

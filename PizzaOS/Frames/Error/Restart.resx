@@ -117,9 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Label5.Text" xml:space="preserve">
-    <value>Een schermnummer is een unieke code die gemaakt wordt om het scherm metteen van de juiste informatie te voorzien. Je kan dit nummer later aanpassen via instellingen. Let wel op als je meer als 15 keer op hetzelfde netwerk het verkeerde nummer ingeeft op 1 dag kan onze firewall je mogelijks blokeren. In dat geval neem contact op met info@hacemedia.be</value>
-  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="PictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

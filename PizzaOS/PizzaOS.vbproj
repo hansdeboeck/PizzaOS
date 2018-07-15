@@ -87,6 +87,12 @@
     <Compile Include="Frames\Error\Licentie.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Frames\Error\Restart.Designer.vb">
+      <DependentUpon>Restart.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Frames\Error\Restart.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Frames\NoPizza%28Firstime%29.Designer.vb">
       <DependentUpon>NoPizza%28Firstime%29.vb</DependentUpon>
     </Compile>
@@ -132,6 +138,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Frames\Error\Licentie.resx">
       <DependentUpon>Licentie.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frames\Error\Restart.resx">
+      <DependentUpon>Restart.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frames\NoPizza%28Firstime%29.resx">
       <DependentUpon>NoPizza%28Firstime%29.vb</DependentUpon>

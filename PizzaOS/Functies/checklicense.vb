@@ -16,24 +16,16 @@ Public Class Checklicence
         Return s
     End Function
 
-    Friend Shared Async Function check(name As String) As Task(Of Integer)
+    Friend Shared Async Function checklicence(name As String) As Task(Of Integer)
 
         Dim page As String = GetPage("https://pizzaos.hacemedia.com/api/check.php?naam=" & name)
         If page = name Then
-            If System.IO.File.Exists("C:\PizzaOS\DONTDELETEME") Then
-                My.Computer.FileSystem.DeleteFile("C:\PizzaOS\DONTDELETEME")
-                My.Computer.Network.DownloadFile("https://pizzaos.hacemedia.com/api/create.php?naam=" & name, "C: \PizzaOS\DONTDELETEME")
-                My.Computer.Network.DownloadFile("https://pizzaos.hacemedia.com/api/create.php?naam=" & name, "C:\PizzaOS\config\user.txt")
-                MsgBox("Restart Requirerd")
-                Getstarted.Close()
-            Else
-                My.Computer.Network.DownloadFile("https://pizzaos.hacemedia.com/api/create.php?naam=" & name, "C:\PizzaOS\DONTDELETEME")
-                My.Computer.Network.DownloadFile("https://pizzaos.hacemedia.com/api/create.php?naam=" & name, "C:\PizzaOS\config\user.txt")
-                MsgBox("Restart Requirerd")
-                Getstarted.Close()
-            End If
 
         Else
+            Licentie.Show()
+            Getstarted.Timer1.Stop()
+            Getstarted.Hide()
+            Getstarted.ShowInTaskbar = False
 
         End If
 

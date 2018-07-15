@@ -23,6 +23,8 @@ Public Class Getstarted
 
 
     Public Sub start()
+        Dim schermnaam As String
+        schermnaam = My.Computer.FileSystem.ReadAllText("C:\PizzaOS\config\user.txt")
         Label1.Text = "Launching 10%"
         If System.IO.File.Exists("C:\PizzaOS\black.txt") Then
             Label1.Text = "STOPPED"
@@ -31,6 +33,7 @@ Public Class Getstarted
             If System.IO.File.Exists("C:\PizzaOS\DONTDELETEME") Then
                 Label1.Text = "Launching 20%"
                 Timer1.Start()
+                Checklicence.checklicence(schermnaam)
 
 
                 'offline
@@ -46,6 +49,7 @@ Public Class Getstarted
 
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
         checkupdate.xxx()
+
         downloadpizzas.pizzasbakken()
         Try
             Dim page As String = GetPage("https://pizzaos.hacemedia.com/api/online.php")
