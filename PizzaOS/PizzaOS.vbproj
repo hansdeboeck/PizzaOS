@@ -81,12 +81,19 @@
     <Compile Include="Frames\Error\Geblokeerd.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Frames\Error\Licentie.Designer.vb">
+      <DependentUpon>Licentie.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Frames\Error\Licentie.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Frames\NoPizza%28Firstime%29.Designer.vb">
       <DependentUpon>NoPizza%28Firstime%29.vb</DependentUpon>
     </Compile>
     <Compile Include="Frames\NoPizza%28Firstime%29.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Functies\checklicense.vb" />
     <Compile Include="Functies\checkupdate.vb" />
     <Compile Include="Functies\downloadpizzas.vb" />
     <Compile Include="Functies\google-chrome.vb" />
@@ -118,16 +125,13 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="Frames\NoPizza%28offline%29.Designer.vb">
-      <DependentUpon>NoPizza%28offline%29.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Frames\NoPizza%28offline%29.vb">
-      <SubType>Form</SubType>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Frames\Error\Geblokeerd.resx">
       <DependentUpon>Geblokeerd.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frames\Error\Licentie.resx">
+      <DependentUpon>Licentie.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frames\NoPizza%28Firstime%29.resx">
       <DependentUpon>NoPizza%28Firstime%29.vb</DependentUpon>

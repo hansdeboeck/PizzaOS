@@ -7,11 +7,8 @@
 
     Private Sub Geblokeerd_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Getstarted.Opacity = 0%
-        Label3.Text = Application.ProductVersion
+        Label3.Text = "PizzaOS v" & Application.ProductVersion
     End Sub
 
-    Private Sub Geblokeerd_Sluiten(sender As Object, e As EventArgs) Handles MyBase.Closing
-        Getstarted.Close()
-    End Sub
 
 End Class

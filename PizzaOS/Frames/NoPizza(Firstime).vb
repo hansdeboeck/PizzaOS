@@ -38,17 +38,23 @@ Public Class NoPizza_Firstime
             End If
 
         Else
+            If page = "LICENTIE" Then
+                Label2.Text = "Je licentie is verlopen"
+                MsgBox("licentie")
+                Licentie.Show()
+                Me.Close()
+            End If
             If pogingen = 1 Then
-                MsgBox("Laatse waarschuwing! Je hebt nog maar 1 poging neem contact op met je account manager", MsgBoxStyle.Critical)
+                    MsgBox("Laatse waarschuwing! Je hebt nog maar 1 poging neem contact op met je account manager", MsgBoxStyle.Critical)
+                End If
+                If pogingen = 0 Then
+                    My.Computer.Network.DownloadFile("https://pizzaos.hacemedia.com/api/create.php", "C:\PizzaOS\black.txt")
+                    MsgBox("Tijdelijk geblokkeerd", MsgBoxStyle.Critical)
+                    Getstarted.Close()
+                End If
+                Label2.Text = "Opgepast! Je hebt nog maar " & pogingen & " pogingen. Dan word je geblokeerd door ons programma"
+                pogingen = pogingen - 1
             End If
-            If pogingen = 0 Then
-                My.Computer.Network.DownloadFile("https://pizzaos.hacemedia.com/api/create.php", "C:\PizzaOS\black.txt")
-                MsgBox("Tijdelijk geblokkeerd", MsgBoxStyle.Critical)
-                Getstarted.Close()
-            End If
-            Label2.Text = "Opgepast! Je hebt nog maar " & pogingen & " pogingen. Dan word je geblokeerd door ons programma"
-            pogingen = pogingen - 1
-        End If
 
     End Sub
 
