@@ -43,6 +43,13 @@ Public Class downloadpizzas
             My.Computer.Network.DownloadFile("https://raw.githubusercontent.com/hansdeboeck/PizzaOS/master/LICENSE", "C:\PizzaOS\LICENSE-" & Application.ProductVersion)
         End If
 
+        If Not System.IO.File.Exists("C:\PizzaOS\log\log-" & Application.ProductVersion) Then
+            Getstarted.Label1.Text = "download het leesmij bestand"
+            Getstarted.Label1.Update()
+            My.Computer.Network.DownloadFile("https://raw.githubusercontent.com/hansdeboeck/PizzaOS/master/LICENSE", "C:\PizzaOS\log\log-" & Application.ProductVersion)
+        End If
+
+
 
     End Function
 End Class

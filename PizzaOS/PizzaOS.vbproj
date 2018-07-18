@@ -99,10 +99,17 @@
     <Compile Include="Frames\NoPizza%28Firstime%29.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Frames\Pizza.Designer.vb">
+      <DependentUpon>Pizza.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Frames\Pizza.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Functies\checklicense.vb" />
     <Compile Include="Functies\checkupdate.vb" />
     <Compile Include="Functies\downloadpizzas.vb" />
     <Compile Include="Functies\google-chrome.vb" />
+    <Compile Include="Functies\online.vb" />
     <Compile Include="Getstarted.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -144,6 +151,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Frames\NoPizza%28Firstime%29.resx">
       <DependentUpon>NoPizza%28Firstime%29.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frames\Pizza.resx">
+      <DependentUpon>Pizza.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Getstarted.resx">
       <DependentUpon>Getstarted.vb</DependentUpon>

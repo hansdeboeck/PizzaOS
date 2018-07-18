@@ -33,11 +33,10 @@ Public Class Getstarted
             If System.IO.File.Exists("C:\PizzaOS\DONTDELETEME") Then
                 Label1.Text = "Launching 20%"
                 Timer1.Start()
-                Checklicence.checklicence(schermnaam)
-
-
-                'offline
-
+                Try
+                    Checklicence.checklicence(schermnaam)
+                Catch ex As Exception
+                End Try
             Else
                 NoPizza_Firstime.Show()
 
@@ -66,13 +65,14 @@ Public Class Getstarted
                 Catch ex As Exception
 
                 End Try
-                Process.Start("C:\PizzaOS\bat\online-" & Application.ProductVersion & ".bat")
+                'Process.Start("C:\PizzaOS\bat\online-" & Application.ProductVersion & ".bat")
 
             End If
         Catch ex As Exception
-            Process.Start("C:\PizzaOS\bat\offline-" & Application.ProductVersion & ".bat")
+            'Process.Start("C:\PizzaOS\bat\offline-" & Application.ProductVersion & ".bat")
         End Try
         Timer1.Stop()
         Label1.Text = "Klaar"
+        Pizza.Show()
     End Sub
 End Class

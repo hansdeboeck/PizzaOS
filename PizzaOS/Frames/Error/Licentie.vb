@@ -1,6 +1,7 @@
 ﻿Public Class Licentie
     Private Sub Licentie_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        Getstarted.Hide()
+        Getstarted.ShowInTaskbar = False
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click

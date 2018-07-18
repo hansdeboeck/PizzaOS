@@ -8,6 +8,8 @@
     Private Sub Geblokeerd_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Getstarted.Opacity = 0%
         Label3.Text = "PizzaOS v" & Application.ProductVersion
+        Getstarted.Hide()
+        Getstarted.ShowInTaskbar = False
     End Sub
 
 
